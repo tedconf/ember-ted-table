@@ -21,7 +21,7 @@ ember install ember-cli-sass
 
 ## Usage
 
-Use ted-table components for rendering table markup to automatically include TED style classes.
+Use ted-table components for rendering table markup to automatically include default TED styles.
 
 ```hbs
 {{#ted-table}}
@@ -41,6 +41,8 @@ Use ted-table components for rendering table markup to automatically include TED
   {{/ted-table-body}}
 {{/ted-table}}
 ```
+
+![](/tests/dummy/public/ted-table.png)
 
 If you need to customize, you can add your own [shed.css](http://tedconf.github.io/shed-css/) class names:
 
