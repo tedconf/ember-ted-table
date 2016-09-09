@@ -1,0 +1,11 @@
+{
+  "name": "index",
+  "_cacheHeaders": {
+    "Content-Type": "text/css; charset=utf-8"
+  },
+  "main": "index.css",
+  "_source": "https://npmcdn.com/shed-css@1.0.0-rc.8/dist/index.css",
+  "_target": "*",
+  "_originalSource": "https://npmcdn.com/shed-css@1.0.0-rc.8/dist/index.css",
+  "_direct": true
+}

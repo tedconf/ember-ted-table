@@ -1,0 +1,123 @@
+.b {
+  border: 1px solid currentColor;
+}
+
+.b-b\:scanline {
+  &::after {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQMAAACTPww9AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURf///7+/v6NDdjkAAAAQSURBVAjXY2hgEGBQYHAAAAR4APGA2fwfAAAAAElFTkSuQmCC");
+    content: " ";
+    display: block;
+    height: .5rem;
+  }
+}
+
+.b-t\:scanline {
+  &::before {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQMAAACTPww9AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURf///7+/v6NDdjkAAAAQSURBVAjXY2hgEGBQYHAAAAR4APGA2fwfAAAAAElFTkSuQmCC");
+    content: " ";
+    display: block;
+    height: .5rem;
+  }
+}
+
+.b-b {
+  border-bottom: 1px solid currentColor;
+}
+
+.b\:0 {
+  border: 0;
+}
+
+.b\:gray-l {
+  border: 1px solid map-get($theme_colors, gray-l);
+}
+
+.b-t\:gray-l {
+  border-top: 1px solid map-get($theme_colors, gray-l);
+}
+
+.b-t\:gray-ll {
+  border-top: 1px solid map-get($theme_colors, gray-ll);
+}
+
+.b-t\:2 {
+  border-top-width: 2px;
+}
+
+.b-b\:gray-l {
+  border-bottom: 1px solid map-get($theme_colors, gray-l);
+}
+
+.b-b\:gray-ll {
+  border-bottom: 1px solid map-get($theme_colors, gray-ll);
+}
+
+.b-b\:red {
+  border-bottom: 1px solid map-get($theme_colors, red);
+}
+
+.b-b-w\:2 {
+  border-bottom-width: 2px;
+}
+
+.b-t-w\:2 {
+  border-top-width: 2px;
+}
+
+.b-b-w\:3 {
+  border-bottom-width: 3px;
+}
+
+.b-l {
+  border-left: 1px solid currentColor;
+}
+
+@each $break, $mq in $breaks {
+  @media($mq) {
+    .b-b\:gray-ll\@#{$break} {
+      border-bottom: 1px solid map-get($theme_colors, gray-ll);
+    }
+
+    .b-b\:0\@#{$break} {
+      border-bottom: 0;
+    }
+
+    .b-l\@#{$break} {
+      border-left: 1px solid currentColor;
+    }
+
+    .b\:0\@#{$break} {
+      border: 0;
+    }
+  }
+}
+
+@each $break, $mq in $breaks {
+  @each $label, $color in $theme_colors {
+    @if $break == n {
+      .b\:#{$label} {
+        border-color: $color;
+      }
+      @for $i from 1 through 9 {
+        .b\:#{$label}\.#{$i} {
+          border-color: transparentize($color, ($i / 10));
+        }
+      }
+    } @else {
+      @media($mq) {
+        .b\:#{$label}\@#{$break} {
+          border-color: $color;
+        }
+        @for $i from 1 through 9 {
+          .b\:#{$label}\.#{$i}\@#{$break} {
+            border-color: transparentize($color, ($i / 10));
+          }
+        }
+      }
+    }
+  }
+}
+
+.border-radius {
+  border-radius: .125rem;
+}

@@ -1,0 +1,132 @@
+$mq-xs: 500px;
+$mq-sm: 700px;
+$mq-md: 900px;
+$mq-lg: 1100px;
+$mq-xl: 1300px;
+$mq-xxl: 1700px;
+$ninja-black: rgba(0, 0, 0, 0);
+$natural-black: #111111;
+$darker-gray: #333333;
+$dark-gray: #666666;
+$gray: #999999;
+$light-gray: #CCCCCC;
+$lighter-gray: #F6F6F6;
+$white-d: #E3E3E3;
+$white: #FFFFFF;
+$error-red: #BF0C00;
+
+/*
+* The official screen and print
+* versions of "TED red" are:
+* * #E62B1E
+* * Pantone 485 C
+* * C=0 M=100 Y=100 K=0
+* * R=230 G=43 B=30
+*/
+$ted-red: #E62B1E;
+
+
+
+$mq-xs-min: "min-width: #{$mq-xs}";
+$mq-sm-min: "min-width: #{$mq-sm}";
+$mq-md-min: "min-width: #{$mq-md}";
+$mq-lg-min: "min-width: #{$mq-lg}";
+$mq-xl-min: "min-width: #{$mq-xl}";
+$mq-xxl-min: "min-width: #{$mq-xxl}";
+
+$mq-xs-max: "max-width: #{$mq-xs}";
+$mq-sm-max: "max-width: #{$mq-sm}";
+$mq-md-max: "max-width: #{$mq-md}";
+$mq-lg-max: "max-width: #{$mq-lg}";
+$mq-xl-max: "max-width: #{$mq-xl}";
+$mq-xxl-max: "max-width: #{$mq-xxl}";
+
+$breaks: (n: 'none', xs: $mq-xs-min, sm: $mq-sm-min, md: $mq-md-min, lg: $mq-lg-min, xl: $mq-xl-min, xxl: $mq-xxl-min);
+
+
+
+$theme_colors: (
+  black: $natural-black,
+  gray-dd: $darker-gray,
+  gray-d: $dark-gray,
+  gray: $gray,
+  gray-l: $light-gray,
+  gray-ll: $lighter-gray,
+  white-d: $white-d,
+  white: $white,
+  red: $ted-red,
+);
+
+@each $break, $mq in $breaks {
+  @each $label, $color in $theme_colors {
+    @if $break == n {
+      .bg\:#{$label} {
+        background-color: $color;
+      }
+
+      .c\:#{$label} {
+        color: $color;
+      }
+
+      .hover\/bg\:#{$label}:hover {
+        background-color: $color;
+      }
+
+      .hover\/c\:#{$label}:hover {
+        color: $color;
+      }
+      @for $i from 1 through 9 {
+        .bg\:#{$label}\.#{$i} {
+          background-color: transparentize($color, ($i / 10));
+        }
+
+        .c\:#{$label}\.#{$i} {
+          color: transparentize($color, ($i / 10));
+        }
+
+        .hover\/bg\:#{$label}\.#{$i}:hover {
+          background-color: transparentize($color, ($i / 10));
+        }
+
+        .hover\/c\:#{$label}\.#{$i}:hover {
+          color: transparentize($color, ($i / 10));
+        }
+      }
+    } @else {
+      @media($mq) {
+        .bg\:#{$label}\@#{$break} {
+          background-color: $color;
+        }
+
+        .c\:#{$label}\@#{$break} {
+          color: $color;
+        }
+
+        .hover\/bg\:#{$label}\@#{$break}:hover {
+          background-color: $color;
+        }
+
+        .hover\/c\:#{$label}\@#{$break}:hover {
+          color: $color;
+        }
+        @for $i from 1 through 9 {
+          .bg\:#{$label}\.#{$i}\@#{$break} {
+            background-color: transparentize($color, ($i / 10));
+          }
+
+          .c\:#{$label}\.#{$i}\@#{$break} {
+            color: transparentize($color, ($i / 10));
+          }
+
+          .hover\/bg\:#{$label}\.#{$i}\@#{$break}:hover {
+            background-color: transparentize($color, ($i / 10));
+          }
+
+          .hover\/c\:#{$label}\.#{$i}\@#{$break}:hover {
+            color: transparentize($color, ($i / 10));
+          }
+        }
+      }
+    }
+  }
+}

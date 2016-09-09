@@ -1,0 +1,23 @@
+<div style="width: 70%; margin: 50px auto;">
+  <h1>TED table</h1>
+  {{#ted-table}}
+    {{#ted-table-header}}
+      {{#ted-table-row}}
+        {{#ted-table-header-cell}}Video{{/ted-table-header-cell}}
+        {{#ted-table-header-cell}}Langauge {{/ted-table-header-cell}}
+      {{/ted-table-row}}
+    {{/ted-table-header}}
+    {{#ted-table-body}}
+      {{#ted-table-row}}
+        {{#ted-table-cell}}
+          Cool video with a longer title Lorem ipsum dolor sit amet, consectetur adipisicing elit. At officiis qui pariatur. Eos, mollitia a natus illo quisquam adipisci, obcaecati, maxime in culpa temporibus perspiciatis modi quas assumenda fugit consequuntur.
+        {{/ted-table-cell}}
+        {{#ted-table-cell}}English{{/ted-table-cell}}
+      {{/ted-table-row}}
+      {{#ted-table-row}}
+        {{#ted-table-cell}}Very cool video{{/ted-table-cell}}
+        {{#ted-table-cell}}Spanish{{/ted-table-cell}}
+      {{/ted-table-row}}
+    {{/ted-table-body}}
+  {{/ted-table}}
+</div>

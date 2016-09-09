@@ -1,0 +1,11 @@
+@import "_colors.scss";
+@import "_borders.scss";
+
+table {
+  border-collapse: collapse;
+}
+
+body, html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
