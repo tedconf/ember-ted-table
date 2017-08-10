@@ -59,7 +59,7 @@ If you need to customize, you can add your own [shed.css](http://tedconf.github.
 * `npm install`
 * `bower install`
 
-##3 Running
+### Running
 
 * `ember serve`
 * Visit your app at http://localhost:4200.
