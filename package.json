@@ -1,7 +1,7 @@
 {
   "name": "ember-ted-table",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "ember-ted-shed table component.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": "https://github.com/tedconf/ember-ted-table",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "tedconf",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
