@@ -2,6 +2,9 @@
 
 This addon is a TED-styled table component, intended for use in TED apps using [ember-ted-shed](https://github.com/tedconf/ember-ted-shed).
 
+## WARNING
+
+This addon is no longer actively developed.
 
 ## Installation
 
